@@ -1,0 +1,13 @@
+<% content_for :title, "Rails Zero" %>
+
+<div class="text-center py-16">
+  <h1 class="text-4xl font-bold text-gray-900 mb-4">Rails Zero</h1>
+  <p class="text-lg text-gray-600 mb-8">Rails 8 starter template with OmniAuth, Solid Queue, and Tailwind.</p>
+
+  <% unless user_signed_in? %>
+    <%= button_to "Sign in with GitHub", "/auth/github", method: :post, data: { turbo: false },
+        class: "inline-block bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-700 border-0 cursor-pointer text-base" %>
+  <% else %>
+    <%= link_to "Go to Dashboard →", dashboard_path, class: "text-gray-900 font-medium hover:underline" %>
+  <% end %>
+</div>
