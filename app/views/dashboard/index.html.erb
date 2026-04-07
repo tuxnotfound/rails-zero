@@ -1,0 +1,13 @@
+<% content_for :title, "Dashboard" %>
+
+<div class="flex items-center gap-4 mb-8">
+  <% if current_user.avatar_url.present? %>
+    <%= image_tag current_user.avatar_url, class: "w-12 h-12 rounded-full", alt: current_user.name %>
+  <% end %>
+  <div>
+    <h1 class="text-2xl font-bold text-gray-900">Hello, <%= current_user.name %>!</h1>
+    <p class="text-sm text-gray-500">@<%= current_user.username %></p>
+  </div>
+</div>
+
+<p class="text-gray-600">You're signed in. Build something great.</p>
